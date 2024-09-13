@@ -1,0 +1,210 @@
+:root {
+    --color-primario: #cd9589; 
+}
+
+.navbar {
+    background-color: var(--color-primario); 
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white; 
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white; 
+}
+
+.hero-image {
+    width: 100%; 
+    height: 100vh; 
+    object-fit: cover; 
+    position: relative; 
+    top: 0; 
+}
+
+body {
+    margin: 0; 
+    font-family: 'Black Slider', cursive; 
+}
+
+.container {
+    position: relative; 
+    z-index: 1; 
+    padding: 20px; 
+}
+
+.section {
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center; 
+    border-top: 2px solid var(--color-primario); 
+    padding-top: 40px; 
+    background-color: white; 
+    scroll-margin-top: 56px; 
+}
+
+.section h2 {
+    color: white; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    width: 100%; 
+    text-transform: uppercase;
+}
+
+.section-title {
+    background-color: var(--color-primario); 
+    padding: 10px 20px; 
+    border-radius: 15px; 
+    margin-bottom: 20px; 
+    display: inline-block; 
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.card {
+    width: 40%; 
+    height: 100%; 
+    perspective: 1000px; 
+    margin: 20px;
+    border: 5px solid var(--color-primario); 
+    padding: 10px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front {
+    background-color: white; 
+    padding: 10px;
+}
+
+.card-back {
+    background-color: #f8f8f8; 
+    color: black; 
+    transform: rotateY(180deg);
+    padding: 10px;
+    font-size: 90%;
+}
+
+.card-front img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.video-container {
+    height: 80vh;
+    position: relative;
+    height: 0; /* Cambiado a 0 para usar padding-bottom */
+    padding-bottom: 56.25%; /* Mantiene la relación de aspecto */
+    width: calc(100% - 40px); 
+    margin: 20px auto; 
+    border-radius: 10px; 
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; 
+}
+
+.vertical-progress {
+    position: fixed;
+    top: 50%; 
+    right: 20px; 
+    width: 40px; 
+    height: 80%; 
+    border-radius: 20px; 
+    padding: 10px; 
+    transform: translateY(-50%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.progress-fill {
+    width: 100%; 
+    background:  var(--color-primario); 
+    border-radius: 15px; 
+    height: 0%; 
+    transition: height 0.3s ease; 
+}
+
+
+@media (max-width: 767px) {
+    .card {
+        height: 250px; 
+        width:80vw;
+    }
+    .vertical-progress {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .card {
+        height: 300px;         
+        width:80vw;
+    }
+    .vertical-progress {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        height: 350px; 
+        width:500px;
+    }
+}
+
+.col-lg-6 {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 3%; 
+}
+
+.col-lg-6 img {
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+}

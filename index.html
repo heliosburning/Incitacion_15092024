@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-primario: #cd9589; 
+            --color-secundario: #f8f9fa; 
+            font-family: 'Arial', sans-serif; 
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--color-secundario); 
+        }
+
+        .loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            background-color: var(--color-primario); 
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .invitation-box {
+            border: 2px solid var(--color-primario);
+            padding: 40px;
+            background-color: var(--color-secundario);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            height: 80vh;
+            position: relative; /* Establish positioning context for absolute children */
+            overflow: hidden; /* Hide overflow content */
+        }
+
+        .invitation-box h3 {
+            color: var(--color-primario);
+            font-weight: bold;
+            width: 100%;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        table, p {
+            text-align: justify;
+            font-size: 0.9rem;
+        }
+
+        .responsive-image {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            position: absolute; /* Position the image absolutely within the box */
+            bottom: 0; /* Align the image to the bottom */
+            left: 50%; /* Center horizontally */
+            bottom: -4%; /* Move the image down by 30 pixels */
+            transform: translateX(-50%); /* Adjust for centering */
+        }
+    </style>
+    <title>Invitación de Cumpleaños</title>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <img src="nakama.png" alt="Cargando..." class="img-fluid" style="width: 250px;">
+    </div>
+
+    <div id="content" class="hidden">
+        <div class="invitation-box">
+            <h3>¡TE INVITO A MI CUMPLE!</h3>
+            <p>Estoy muy agradecido de mi amistad contigo y de poder compartirnos un año más. Para festejar mi cumpleaños # 23, te quiero invitar a un almuerzo de señoras.</p>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>Fecha:</strong> 15 de Septiembre 2024.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hora:</strong> 10:30 AM.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lugar:</strong> La plaza grande.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regalo sugerido:</strong> Mínimo unos $500, besar al cumpleañero o presentarle a una amiga soltera.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="divider"></div>
+            
+            <img src="monkeydluffy.png" alt="Luffy" class="responsive-image"> <!-- Image positioned at the bottom -->
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('loader').classList.add('fade-out');
+        }, 3000);
+
+        document.getElementById('loader').addEventListener('transitionend', function() {
+            this.classList.add('hidden');
+            document.getElementById('content').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
